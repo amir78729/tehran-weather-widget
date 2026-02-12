@@ -9,8 +9,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100dvw;
-        height: 100dvh;
+        width: 100vw;
+        height: 100vh;
         margin: 0;
         padding: 0;
         background: black;
@@ -18,10 +18,26 @@
       }
       a {
         color: black;
+        position: relative;
       }
       a::after {
-        content: "Waiting...";
-        color: white;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 440px;
+        height: 180px;
+        animation: skeleton 1s infinite alternate;
+        border-radius: 1rem;
+      }
+      @keyframes skeleton {
+        from {
+          background: #111a;
+        }
+        to {
+          background: #111c;
+        }
       }
     </style>
   </head>
